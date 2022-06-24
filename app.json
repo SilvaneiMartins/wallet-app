@@ -1,0 +1,12 @@
+{
+  "name": "wallet-app",
+  "displayName": "wallet-app",
+  "expo": {
+    "name": "wallet-app",
+    "slug": "wallet-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
