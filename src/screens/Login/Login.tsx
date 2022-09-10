@@ -16,10 +16,17 @@ import {
     ViewButton,
 } from "./styles";
 
-const Login = () => {
+export const Login = () => {
     const { COLORS } = useTheme();
-
     const [loading, setLoading] = useState(false);
+
+    function onPressButton() {
+        setLoading(true);
+        console.log("pressionado");
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }
 
     return (
         <Container>
@@ -47,13 +54,12 @@ const Login = () => {
 
                 <ButtonPersonalizado
                     title="Entrar"
-                    onPress={() => { }}
-                    isLoading={loading}
+                    variant="primary"
+                    onPress={onPressButton}
+                    style={{ marginBottom: 20 }}
                 />
             </ContentBody>
             <ContentFooter></ContentFooter>
         </Container>
     );
 };
-
-export default Login;

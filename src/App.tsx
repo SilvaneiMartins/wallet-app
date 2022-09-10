@@ -1,6 +1,6 @@
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 import React from "react";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 
@@ -16,12 +16,12 @@ import {
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 
-import COLORS from "../src/styles/theme";
+import theme from "../src/styles/theme";
 
-import Login from "./screens/Login";
+import { Login } from "./screens/Login";
 import Cadastro from "./screens/Cadastro";
 
-const App = () => {
+export const App = () => {
     const [fontsLoaded] = useFonts({
         Poppins_300Light,
         Poppins_400Regular,
@@ -37,14 +37,17 @@ const App = () => {
     }
 
     return (
-        <ThemeProvider theme={COLORS}>
+        <ThemeProvider theme={theme}>
             <StatusBar style="dark" translucent backgroundColor="transparent" />
 
-            <View>
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: theme.COLORS.WHITE,
+                }}
+            >
                 <Login />
             </View>
         </ThemeProvider>
     );
 };
-
-export default App;

@@ -1,7 +1,14 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
 import { AntDesign } from '@expo/vector-icons';
-import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    ActivityIndicator,
+    TouchableOpacityProps,
+} from 'react-native';
 
 import { variants } from './variants';
 import { Container, Title, Content } from './styles';
@@ -16,7 +23,7 @@ interface ButtonProps {
     style?: TouchableOpacityProps["style"];
 }
 
-export const ButtonPersonalizado: React.FC<ButtonProps> = ({
+export function ButtonPersonalizado({
     title,
     onPress,
     isLoading,
@@ -24,10 +31,10 @@ export const ButtonPersonalizado: React.FC<ButtonProps> = ({
     disabled,
     variant = 'primary',
     style,
-}) => {
+}: ButtonProps) {
     const { COLORS } = useTheme();
     const buttonVariant = variants[variant];
-    const buttonStyle = disabled ? buttonVariant.desabled : buttonVariant.enabled;
+    const buttonStyle = disabled ? buttonVariant.disabled : buttonVariant.enabled;
 
     return (
         <Container
