@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Icon from '@expo/vector-icons/Ionicons';
 import { useTheme } from 'styled-components';
-import { TextInputProps } from 'react-native';
+import { TextInputProps, Pressable } from 'react-native';
+import { Eye, EyeSlash } from 'phosphor-react-native';
 
 import { Container, InputContainer } from './styles'
 
@@ -23,6 +24,12 @@ const Input = ({
 }: InputProps) => {
     const { COLORS } = useTheme();
 
+    const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+
+    const handlePasswordVisible = () => {
+        setIsPasswordVisible(v => !v);
+    }
+
     return (
         <Container>
             {LeftIcon && (
@@ -35,15 +42,29 @@ const Input = ({
             )}
             <InputContainer
                 {...rest}
+                secureTextEntry={isPasswordVisible}
                 placeholderTextColor={COLORS.GRAY3}
             />
             {RightIcon && (
-                <Icon
-                    name={iconName}
-                    size={iconSize}
-                    color={iconColor || COLORS.TEXTDARK}
-                    style={{ padding: 5 }}
-                />
+                <Pressable
+                    onPress={handlePasswordVisible}
+                >
+                    {isPasswordVisible ? (
+                        <Eye
+                            name={iconName}
+                            size={iconSize}
+                            color={iconColor || COLORS.TEXTDARK}
+                            style={{ padding: 5 }}
+                        />
+                    ) : (
+                        <EyeSlash
+                            name={iconName}
+                            size={iconSize}
+                            color={iconColor || COLORS.TEXTDARK}
+                            style={{ padding: 5 }}
+                        />
+                    )}
+                </Pressable>
             )}
         </Container>
     )
