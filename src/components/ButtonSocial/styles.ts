@@ -8,8 +8,8 @@ export const Button = styled(RectButton)`
     flex-direction: row;
     margin-bottom: 16px;
     justify-content: center;
-    width: ${RFValue(130)}px;
-    height: ${RFValue(60)}px;
+    width: ${RFValue(145)}px;
+    height: ${RFValue(50)}px;
     margin-left: ${RFValue(10)}px;
     border-radius: ${RFValue(5)}px;
     box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);

@@ -5,15 +5,22 @@ import { TextInputProps } from 'react-native';
 
 import { Container, InputContainer } from './styles'
 
-interface InputProps {
+interface InputProps extends TextInputProps {
     RightIcon?: boolean;
     LeftIcon?: boolean;
-    iconName: string;
+    iconName?: any;
     iconSize?: number;
     iconColor?: string;
 }
 
-const Input: React.FC<InputProps & TextInputProps> = ({ RightIcon, LeftIcon, iconName, iconSize, iconColor, ...rest }) => {
+const Input = ({
+    RightIcon,
+    LeftIcon,
+    iconName,
+    iconSize,
+    iconColor,
+    ...rest
+}: InputProps) => {
     const { COLORS } = useTheme();
 
     return (
@@ -26,7 +33,7 @@ const Input: React.FC<InputProps & TextInputProps> = ({ RightIcon, LeftIcon, ico
                     style={{ padding: 5 }}
                 />
             )}
-            <InputContainer 
+            <InputContainer
                 {...rest}
                 placeholderTextColor={COLORS.GRAY3}
             />

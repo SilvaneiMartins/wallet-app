@@ -1,6 +1,5 @@
 import theme from '../../styles/theme';
 
-
 interface ButtonStyle {
     button: {
         backgroundColor: string;

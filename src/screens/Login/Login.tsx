@@ -47,6 +47,7 @@ export const Login = () => {
                 />
                 <Input
                     LeftIcon
+                    RightIcon
                     iconSize={25}
                     iconName="lock-closed-outline"
                     placeholder="Digite sua senha"

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     width: 100%;
-    height: 50px;
+    height: 60px;
     padding: 0 12px;
     margin-top: 10px;
     border-radius: 8px;
@@ -16,7 +16,7 @@ export const InputContainer = styled.TextInput`
     border: 0;
     flex: 1;
     height: 45px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 8px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
 `;

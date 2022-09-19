@@ -6,9 +6,10 @@ export const Container = styled.View`
 `;
 
 export const ContentHeader = styled.View`
+    width: 100%;
+    margin-left: -10px;
     align-items: center;
-    justify-content: center;
-    padding: ${RFValue(20)}px;
+    justify-content: space-between;
 `;
 
 export const ContentBody = styled.View`
