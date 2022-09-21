@@ -14,6 +14,9 @@ import {
     Title,
     Description,
     ViewButton,
+    ButtonSignUp,
+    TitleButtonSignUp1,
+    TitleButtonSingUp2,
 } from "./styles";
 
 export const Login = () => {
@@ -70,7 +73,12 @@ export const Login = () => {
                     style={{ marginBottom: 20 }}
                 />
             </ContentBody>
-            <ContentFooter></ContentFooter>
+            <ContentFooter>
+                <ButtonSignUp>
+                    <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                    <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
+                </ButtonSignUp>
+            </ContentFooter>
         </Container>
     );
 };
