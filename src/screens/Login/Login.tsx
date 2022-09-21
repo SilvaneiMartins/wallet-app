@@ -17,6 +17,9 @@ import {
     ButtonSignUp,
     TitleButtonSignUp1,
     TitleButtonSingUp2,
+    ContentForgotPassword,
+    ContentButtonForgotPassword,
+    ContentTitleForgotPassword,
 } from "./styles";
 
 export const Login = () => {
@@ -66,6 +69,12 @@ export const Login = () => {
 
                 />
 
+                <ContentForgotPassword>
+                    <ContentButtonForgotPassword onPress={() => {}}>
+                        <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
+                    </ContentButtonForgotPassword>
+                </ContentForgotPassword>
+
                 <ButtonPersonalizado
                     title="Entrar"
                     variant="primary"
@@ -74,7 +83,7 @@ export const Login = () => {
                 />
             </ContentBody>
             <ContentFooter>
-                <ButtonSignUp>
+                <ButtonSignUp onPress={() => {}}>
                     <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
                     <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
                 </ButtonSignUp>

@@ -14,8 +14,7 @@ export const ContentHeader = styled.View`
     justify-content: space-between;
 `;
 
-export const ContentBody = styled.View`
-`;
+export const ContentBody = styled.View``;
 
 export const ViewButton = styled.View`
     flex-direction: row;
@@ -52,7 +51,7 @@ export const ButtonSignUp = styled(Pressable)`
 
 export const TitleButtonSignUp1 = styled.Text`
     font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.GRAY4};
+    color: ${({ theme }) => theme.COLORS.GRAY3};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
@@ -61,4 +60,25 @@ export const TitleButtonSingUp2 = styled.Text`
     margin-left: 10px;
     color: ${({ theme }) => theme.COLORS.BLUE};
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
+`;
+
+export const ContentForgotPassword = styled.View`
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: flex-end;
+    justify-content: flex-end;
+`;
+
+
+export const ContentButtonForgotPassword = styled(Pressable)`
+    align-items: center;
+    justify-content: flex-end;
+`;
+
+export const ContentTitleForgotPassword = styled.Text`
+    align-items: flex-end;
+    font-size: 17px;
+    color: ${({ theme }) => theme.COLORS.GRAY3};
+    font-family: ${({ theme }) => theme.FONTS.POPPINSREGULAR};
 `;

@@ -79,10 +79,10 @@ const buttonBlack: ButtonVariant = {
             backgroundColor: theme.COLORS.BLACK,
         },
         title: {
-            color: theme.COLORS.ORANGE_300,
+            color: theme.COLORS.WHITE,
         },
         icon: {
-            color: theme.COLORS.ORANGE_300,
+            color: theme.COLORS.WHITE,
         },
     },
     disabled: {
@@ -90,10 +90,10 @@ const buttonBlack: ButtonVariant = {
             backgroundColor: theme.COLORS.GRAY_100,
         },
         title: {
-            color: theme.COLORS.WHITE,
+            color: theme.COLORS.GRAY3,
         },
         icon: {
-            color: theme.COLORS.WHITE,
+            color: theme.COLORS.GRAY3,
         },
     },
 };
