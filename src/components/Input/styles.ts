@@ -15,7 +15,7 @@ export const Container = styled.View`
 export const InputContainer = styled.TextInput`
     border: 0;
     flex: 1;
-    height: 45px;
+    height: 50px;
     font-size: 16px;
     border-radius: 8px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};

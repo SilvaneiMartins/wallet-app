@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import Icon from '@expo/vector-icons/Ionicons';
 import { useTheme } from 'styled-components';
-import { TextInputProps, Pressable } from 'react-native';
-import { Eye, EyeSlash } from 'phosphor-react-native';
+import { TextInputProps, TouchableOpacity } from 'react-native';
 
 import { Container, InputContainer } from './styles'
 
 interface InputProps extends TextInputProps {
-    RightIcon?: boolean;
-    LeftIcon?: boolean;
-    iconName?: any;
     iconSize?: number;
     iconColor?: string;
+    LeftIcon?: boolean;
+    RightIcon?: boolean;
+    iconName: keyof typeof Icon.glyphMap;
+    secureTextEntry?: boolean;
 }
 
 const Input = ({
@@ -20,15 +20,12 @@ const Input = ({
     iconName,
     iconSize,
     iconColor,
+    secureTextEntry = true,
     ...rest
 }: InputProps) => {
     const { COLORS } = useTheme();
 
-    const [isPasswordVisible, setIsPasswordVisible] = useState(true);
-
-    const handlePasswordVisible = () => {
-        setIsPasswordVisible(v => !v);
-    }
+    const [secury, setSecury] = useState(secureTextEntry);
 
     return (
         <Container>
@@ -36,35 +33,25 @@ const Input = ({
                 <Icon
                     name={iconName}
                     size={iconSize}
-                    color={iconColor || COLORS.TEXTDARK}
+                    color={iconColor || COLORS.GRAY2}
                     style={{ padding: 5 }}
                 />
             )}
             <InputContainer
                 {...rest}
-                secureTextEntry={isPasswordVisible}
+                secureTextEntry={secury}
+                underlineColorAndroid='transparent'
                 placeholderTextColor={COLORS.GRAY3}
             />
             {RightIcon && (
-                <Pressable
-                    onPress={handlePasswordVisible}
-                >
-                    {isPasswordVisible ? (
-                        <Eye
-                            name={iconName}
-                            size={iconSize}
-                            color={iconColor || COLORS.TEXTDARK}
-                            style={{ padding: 5 }}
-                        />
-                    ) : (
-                        <EyeSlash
-                            name={iconName}
-                            size={iconSize}
-                            color={iconColor || COLORS.TEXTDARK}
-                            style={{ padding: 5 }}
-                        />
-                    )}
-                </Pressable>
+                <TouchableOpacity onPress={() => setSecury(!secury)}>
+                    <Icon
+                        name={secury ? 'eye' : 'eye-off'}
+                        size={iconSize}
+                        color={iconColor || COLORS.GRAY2}
+                        style={{ padding: 5 }}
+                    />
+                </TouchableOpacity>
             )}
         </Container>
     )

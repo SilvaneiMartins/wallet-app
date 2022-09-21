@@ -72,3 +72,11 @@
     3 - git merge --abort           # para cancelar o merge
     4 - git add .
     5 - git commit -m "feat: fusão das branch develop e main"
+
+
+# Documentação Input
+
+    * leftIcon: Ele serve para ancorar ícone na esquerda;
+    * rightIcon: Ele serve para ancorar ícone na direita;
+    * secureTextEntry: Serve para colocar typo de password;
+    * secureTextEntry={false}: Serve para tirar o type de password;

@@ -16,11 +16,11 @@ import { Container, Title, Content } from './styles';
 interface ButtonProps {
     title: string;
     onPress: () => void;
-    iconName?: keyof typeof AntDesign.glyphMap;
     isLoading?: boolean;
     disabled?: boolean;
-    variant?: "primary" | "outline" | "black";
     style?: TouchableOpacityProps["style"];
+    variant?: "primary" | "outline" | "black";
+    iconName?: keyof typeof AntDesign.glyphMap;
 }
 
 export function ButtonPersonalizado({

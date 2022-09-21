@@ -42,15 +42,25 @@ export const Login = () => {
                 <Input
                     LeftIcon
                     iconSize={25}
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    secureTextEntry={false}
                     iconName="mail-outline"
+                    keyboardType="email-address"
                     placeholder="Digite seu e-mail"
                 />
+
                 <Input
                     LeftIcon
                     RightIcon
                     iconSize={25}
+                    secureTextEntry
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    keyboardType="default"
                     iconName="lock-closed-outline"
                     placeholder="Digite sua senha"
+
                 />
 
                 <ButtonPersonalizado
