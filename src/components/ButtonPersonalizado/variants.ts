@@ -65,10 +65,10 @@ const buttonOutLine: ButtonVariant = {
             backgroundColor: 'transparent',
         },
         title: {
-            color: theme.COLORS.GRAY_100,
+            color: theme.COLORS.GREEN1,
         },
         icon: {
-            color: theme.COLORS.GRAY_100,
+            color: theme.COLORS.GREEN1,
         },
     },
 }
@@ -90,10 +90,10 @@ const buttonBlack: ButtonVariant = {
             backgroundColor: theme.COLORS.GRAY_100,
         },
         title: {
-            color: theme.COLORS.GRAY3,
+            color: theme.COLORS.WHITE,
         },
         icon: {
-            color: theme.COLORS.GRAY3,
+            color: theme.COLORS.WHITE,
         },
     },
 };

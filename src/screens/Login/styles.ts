@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
-    flex: 1;
     padding: ${RFValue(20)}px;
 `;
 
@@ -35,12 +34,9 @@ export const Description = styled.Text`
 `;
 
 export const ContentFooter = styled.View`
+    margin-top: 30px;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 30px;
 `;
 
 export const ButtonSignUp = styled(Pressable)`

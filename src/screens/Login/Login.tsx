@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, Text } from "react-native";
+import { KeyboardAvoidingView } from "react-native";
 import { useTheme } from "styled-components";
 
 import Input from "../../components/Input/Input";
@@ -35,59 +35,60 @@ export const Login = () => {
     }
 
     return (
-        <Container>
-            <ContentHeader>
-                <Title> Seja bem vindo(a) {"\n"} a App Carteira</Title>
-                <Description>Entrar com rede sociais</Description>
-                <ViewButton>
-                    <ButtonSocialGoogle title="Google" />
-                    <ButtonSocial iconName="facebook" title="Facebook" />
-                </ViewButton>
-            </ContentHeader>
-            <ContentBody>
-                <Input
-                    LeftIcon
-                    iconSize={25}
-                    autoCorrect={false}
-                    autoCapitalize="none"
-                    secureTextEntry={false}
-                    iconName="mail-outline"
-                    keyboardType="email-address"
-                    placeholder="Digite seu e-mail"
-                />
-
-                <Input
-                    LeftIcon
-                    RightIcon
-                    iconSize={25}
-                    secureTextEntry
-                    autoCorrect={false}
-                    autoCapitalize='none'
-                    keyboardType="default"
-                    iconName="lock-closed-outline"
-                    placeholder="Digite sua senha"
-
-                />
-
-                <ContentForgotPassword>
-                    <ContentButtonForgotPassword onPress={() => {}}>
-                        <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
-                    </ContentButtonForgotPassword>
-                </ContentForgotPassword>
-
-                <ButtonPersonalizado
-                    title="Entrar"
-                    variant="primary"
-                    onPress={onPressButton}
-                    style={{ marginBottom: 20 }}
-                />
-            </ContentBody>
-            <ContentFooter>
-                <ButtonSignUp onPress={() => {}}>
-                    <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
-                    <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
-                </ButtonSignUp>
-            </ContentFooter>
-        </Container>
+        <KeyboardAvoidingView
+            behavior="position"
+            enabled
+        >
+            <Container>
+                <ContentHeader>
+                    <Title> Seja bem vindo(a) {"\n"} a App Carteira</Title>
+                    <Description>Entrar com rede sociais</Description>
+                    <ViewButton>
+                        <ButtonSocialGoogle title="Google" />
+                        <ButtonSocial iconName="facebook" title="Facebook" />
+                    </ViewButton>
+                </ContentHeader>
+                <ContentBody>
+                    <Input
+                        LeftIcon
+                        iconSize={25}
+                        autoCorrect={false}
+                        autoCapitalize="none"
+                        secureTextEntry={false}
+                        iconName="mail-outline"
+                        keyboardType="email-address"
+                        placeholder="Digite seu e-mail"
+                    />
+                    <Input
+                        LeftIcon
+                        RightIcon
+                        iconSize={25}
+                        secureTextEntry
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                        keyboardType="default"
+                        iconName="lock-closed-outline"
+                        placeholder="Digite sua senha"
+                    />
+                    <ContentForgotPassword>
+                        <ContentButtonForgotPassword onPress={() => { }}>
+                            <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
+                        </ContentButtonForgotPassword>
+                    </ContentForgotPassword>
+                    <ButtonPersonalizado
+                        title="Entrar"
+                        variant="primary"
+                        onPress={onPressButton}
+                        style={{ marginBottom: 20 }}
+                    />
+                </ContentBody>
+                <ContentFooter>
+                    <ButtonSignUp onPress={() => { }}>
+                        <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                        <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
+                    </ButtonSignUp>
+                </ContentFooter>
+            </Container>
+        </KeyboardAvoidingView>
     );
 };

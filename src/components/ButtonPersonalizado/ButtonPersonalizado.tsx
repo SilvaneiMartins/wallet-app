@@ -2,10 +2,6 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 import { AntDesign } from '@expo/vector-icons';
 import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
     ActivityIndicator,
     TouchableOpacityProps,
 } from 'react-native';
@@ -56,7 +52,7 @@ export function ButtonPersonalizado({
                             }}
                         />
                     )}
-                    <Title>{title}</Title>
+                    <Title color={[buttonStyle.title.color]}>{title}</Title>
                 </Content>
             )}
         </Container>

@@ -11,7 +11,6 @@ export const Container = styled(TouchableOpacity).attrs({
     justify-content: center;
     margin-top: ${RFValue(15)}px;
     border-radius: ${RFValue(8)}px;
-    background-color: ${({ theme }) => theme.COLORS.PRIMARY};
 `;
 
 export const Content = styled.View`
@@ -22,6 +21,5 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
     font-size: ${RFValue(18)}px;
-    color: ${({ theme }) => theme.COLORS.BACKGROUNDDARK};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
