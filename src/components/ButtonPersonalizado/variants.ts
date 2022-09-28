@@ -8,6 +8,7 @@ interface ButtonStyle {
     };
     title: {
         color: string;
+        fontSize?: number,
     };
     icon: {
         color: string;
@@ -98,8 +99,36 @@ const buttonBlack: ButtonVariant = {
     },
 };
 
+const buttonTransparent: ButtonVariant = {
+    enabled: {
+        button: {
+            backgroundColor: 'transparent',
+        },
+        title: {
+            color: theme.COLORS.GRAY2,
+            fontSize: 17,
+        },
+        icon: {
+            color: theme.COLORS.GRAY2,
+        }
+    },
+    disabled: {
+        button: {
+            backgroundColor: 'transparent',
+        },
+        title: {
+            color: theme.COLORS.GRAY2,
+            fontSize: 17,
+        },
+        icon: {
+            color: theme.COLORS.GRAY2,
+        }
+    }
+}
+
 export const variants = {
     primary: buttonPrimary,
     outline: buttonOutLine,
     black: buttonBlack,
+    transparent: buttonTransparent,
 };

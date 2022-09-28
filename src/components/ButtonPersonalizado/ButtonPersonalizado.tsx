@@ -9,13 +9,13 @@ import {
 import { variants } from './variants';
 import { Container, Title, Content } from './styles';
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityProps {
     title: string;
     onPress: () => void;
     isLoading?: boolean;
     disabled?: boolean;
     style?: TouchableOpacityProps["style"];
-    variant?: "primary" | "outline" | "black";
+    variant?: "primary" | "outline" | "black" | 'transparent';
     iconName?: keyof typeof AntDesign.glyphMap;
 }
 
@@ -27,6 +27,7 @@ export function ButtonPersonalizado({
     disabled,
     variant = 'primary',
     style,
+    ...rest
 }: ButtonProps) {
     const { COLORS } = useTheme();
     const buttonVariant = variants[variant];
@@ -34,6 +35,7 @@ export function ButtonPersonalizado({
 
     return (
         <Container
+            {...rest}
             onPress={onPress}
             disabled={isLoading || disabled}
             style={[buttonStyle.button, style]}
