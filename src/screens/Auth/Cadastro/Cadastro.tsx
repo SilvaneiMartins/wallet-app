@@ -3,12 +3,10 @@ import { Text } from "react-native";
 
 import { Container } from "./styles";
 
-const Cadastro = () => {
+export const Cadastro = () => {
     return (
         <Container>
             <Text>Cadastro</Text>
         </Container>
     );
 };
-
-export default Cadastro;

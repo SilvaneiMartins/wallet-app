@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { KeyboardAvoidingView } from "react-native";
 import { useTheme } from "styled-components";
+import { KeyboardAvoidingView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-import Input from "../../components/Input/Input";
-import { ButtonSocial } from "../../components/ButtonSocial/ButtonSocial";
-import { ButtonPersonalizado } from "../../components/ButtonPersonalizado";
-import { ButtonSocialGoogle } from "../../components/ButtonSocialGoogle/ButtonSocialGoogle";
+import Input from "../../../components/Input/Input";
+import { ButtonSocial } from "../../../components/ButtonSocial/ButtonSocial";
+import { ButtonPersonalizado } from "../../../components/ButtonPersonalizado";
+import { ButtonSocialGoogle } from "../../../components/ButtonSocialGoogle/ButtonSocialGoogle";
 import {
     Container,
     ContentHeader,
@@ -25,6 +26,7 @@ import {
 export const Login = () => {
     const { COLORS } = useTheme();
     const [loading, setLoading] = useState(false);
+    const navigation = useNavigation()
 
     function onPressButton() {
         setLoading(true);
@@ -32,6 +34,10 @@ export const Login = () => {
         setTimeout(() => {
             setLoading(false);
         }, 2000);
+    }
+
+    const handleCadastro = () => {
+        navigation.navigate('Login');
     }
 
     return (
@@ -83,7 +89,7 @@ export const Login = () => {
                     />
                 </ContentBody>
                 <ContentFooter>
-                    <ButtonSignUp onPress={() => { }}>
+                    <ButtonSignUp onPress={handleCadastro}>
                         <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
                         <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
                     </ButtonSignUp>

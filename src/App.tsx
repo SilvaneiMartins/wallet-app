@@ -1,7 +1,8 @@
 import React from "react";
-import { View, ActivityIndicator, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
+import { View, ActivityIndicator, Text } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
     useFonts,
@@ -16,9 +17,7 @@ import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 
 import theme from "../src/styles/theme";
-
-import { Login } from "./screens/Login";
-import Cadastro from "./screens/Cadastro";
+import { Routes } from './routes'
 
 export const App = () => {
     const [fontsLoaded] = useFonts({
@@ -37,16 +36,18 @@ export const App = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <StatusBar style="dark" translucent backgroundColor="transparent" />
+            <NavigationContainer>
+                <StatusBar style="dark" translucent backgroundColor="transparent" />
 
-            <View
-                style={{
-                    flex: 1,
-                    backgroundColor: theme.COLORS.WHITE,
-                }}
-            >
-                <Login />
-            </View>
+                <View
+                    style={{
+                        flex: 1,
+                        backgroundColor: theme.COLORS.WHITE,
+                    }}
+                >
+                    <Routes />
+                </View>
+            </NavigationContainer>
         </ThemeProvider>
     );
 };
