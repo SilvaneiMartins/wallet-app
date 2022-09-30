@@ -37,7 +37,11 @@ export const Login = () => {
     }
 
     const handleCadastro = () => {
-        navigation.navigate('Login');
+        navigation.navigate('Cadastro');
+    }
+
+    const handleRecuperarSenha = () => {
+        navigation.navigate('RecuperarSenha');
     }
 
     return (
@@ -78,14 +82,14 @@ export const Login = () => {
                         placeholder="Digite sua senha"
                     />
                     <ContentForgotPassword>
-                        <ContentButtonForgotPassword onPress={handleCadastro}>
+                        <ContentButtonForgotPassword onPress={handleRecuperarSenha}>
                             <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
                         </ContentButtonForgotPassword>
                     </ContentForgotPassword>
                     <ButtonPersonalizado
                         title="Entrar"
                         variant="primary"
-                        onPress={handleCadastro}
+                        onPress={() => {}}
                         style={{ marginBottom: 20 }}
                     />
 
