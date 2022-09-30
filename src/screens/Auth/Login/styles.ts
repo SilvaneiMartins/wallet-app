@@ -39,7 +39,7 @@ export const ContentFooter = styled.View`
     justify-content: center;
 `;
 
-export const ButtonSignUp = styled(Pressable)`
+export const ButtonSignUp = styled.TouchableOpacity`
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -67,7 +67,7 @@ export const ContentForgotPassword = styled.View`
 `;
 
 
-export const ContentButtonForgotPassword = styled(Pressable)`
+export const ContentButtonForgotPassword = styled.TouchableOpacity`
     align-items: center;
     justify-content: flex-end;
 `;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTheme } from "styled-components";
-import { KeyboardAvoidingView } from "react-native";
+import { KeyboardAvoidingView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Input from "../../../components/Input/Input";
@@ -41,11 +41,12 @@ export const Login = () => {
     }
 
     return (
-        <KeyboardAvoidingView
-            behavior="position"
-            enabled
-        >
-            <Container>
+        // <KeyboardAvoidingView
+        //     behavior="position"
+        //     enabled
+        // >
+        <Container>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <ContentHeader>
                     <Title> Seja bem vindo(a) {"\n"} a App Carteira</Title>
                     <Description>Entrar com rede sociais</Description>
@@ -77,24 +78,27 @@ export const Login = () => {
                         placeholder="Digite sua senha"
                     />
                     <ContentForgotPassword>
-                        <ContentButtonForgotPassword onPress={() => { }}>
+                        <ContentButtonForgotPassword onPress={handleCadastro}>
                             <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
                         </ContentButtonForgotPassword>
                     </ContentForgotPassword>
                     <ButtonPersonalizado
                         title="Entrar"
                         variant="primary"
-                        onPress={onPressButton}
+                        onPress={handleCadastro}
                         style={{ marginBottom: 20 }}
                     />
+
+
+                    <ContentFooter>
+                        <ButtonSignUp onPress={handleCadastro}>
+                            <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                            <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
+                        </ButtonSignUp>
+                    </ContentFooter>
                 </ContentBody>
-                <ContentFooter>
-                    <ButtonSignUp onPress={handleCadastro}>
-                        <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
-                        <TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
-                    </ButtonSignUp>
-                </ContentFooter>
-            </Container>
-        </KeyboardAvoidingView>
+            </ScrollView>
+        </Container>
+        // </KeyboardAvoidingView>
     );
 };
