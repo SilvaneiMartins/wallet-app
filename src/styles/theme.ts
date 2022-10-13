@@ -38,6 +38,9 @@ export default {
         PURPLEDARK1: '#6E34B8',
         PURPLEDARK2: '#5B259F',
         PURPLEDARK3: '#2F1155',
+        PURPLE_CARD: "#5B259F",
+        PURPLE_ELIPSE_ONE: "#6E34B8",
+        PURPLE_ELIPSE_TWO: "#9038FF",
 
         TONE: '#E6E3D6',
         AVATAR: '#E0E0E0',
