@@ -42,7 +42,11 @@ import {
 export const Carteira = () => {
     return (
         <Container>
-            <Header />
+            <Header
+                textLeft
+                avatarRight
+                appName='Wallet'
+            />
 
             <ViewContainer>
                 <Content>

@@ -26,6 +26,7 @@ export const Avatar = styled.Image`
 export const AppName = styled.Text`
     font-size: 20px;
     line-height: 29.8px;
+    text-align: center;
     color: ${({ theme }) => theme.COLORS.GRAY1};
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
 `;

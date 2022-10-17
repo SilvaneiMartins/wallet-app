@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
 import {
     Container,
@@ -9,16 +8,30 @@ import {
     Status,
 } from './styles';
 
-export const Header = () => {
+interface IHeader {
+    appName: string;
+    textLeft?: boolean;
+    avatarRight?: boolean;
+}
+
+export const Header = ({
+    appName,
+    textLeft,
+    avatarRight
+}: IHeader) => {
     return (
         <Container>
-           <ContentHeader>
-                <AppName>Wallet</AppName>
-                <Status>Ativo</Status>
-           </ContentHeader>
-           <Avatar
-                source={{ uri: 'https://avatars.githubusercontent.com/u/4657811?v=4' }}
-           />
+            <ContentHeader>
+                <AppName>{appName}</AppName>
+                {textLeft && (
+                    <Status>Ativo</Status>
+                )}
+            </ContentHeader>
+            {avatarRight && (
+                <Avatar
+                    source={{ uri: 'https://avatars.githubusercontent.com/u/4657811?v=4' }}
+                />
+            )}
         </Container>
     )
 }
