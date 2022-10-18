@@ -42,7 +42,7 @@ export const App = () => {
                 <View
                     style={{
                         flex: 1,
-                        backgroundColor: theme.COLORS.WHITE,
+                        backgroundColor: theme.COLORS.WHITE_100,
                     }}
                 >
                     <Routes />
