@@ -28,6 +28,7 @@ interface IProfile {
     typeWalet?: boolean;
     typeLogin?: boolean;
     typeCall?: boolean;
+    onPress: () => void;
 }
 
 export const Profile = ({
@@ -39,16 +40,11 @@ export const Profile = ({
     typeNotification,
     typeUser,
     typeWalet,
+    onPress,
 }: IProfile) => {
     const { COLORS } = useTheme();
 
     const navigation = useNavigation();
-
-    const handleGoPerfil = () => {
-        // navigation.navigate("");
-        console.warn('Clicou aqui....')
-    }
-
 
     return (
         <>
@@ -105,7 +101,7 @@ export const Profile = ({
                     )}
                     <ViewRight>
                         <ProfileName>{name}</ProfileName>
-                        <TouchableOpacity onPress={handleGoPerfil}>
+                        <TouchableOpacity onPress={onPress}>
                             <CaretRight
                                 size={23}
                                 weight="bold"

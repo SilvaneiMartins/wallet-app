@@ -38,7 +38,6 @@ export const App = () => {
         <ThemeProvider theme={theme}>
             <NavigationContainer>
                 <StatusBar style="dark" translucent backgroundColor="transparent" />
-
                 <View
                     style={{
                         flex: 1,

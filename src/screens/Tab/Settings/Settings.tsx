@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { SignOut } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Header } from '../../../components/Header';
 import { Profile } from '../../../components/Profile';
@@ -14,6 +15,11 @@ import {
 
 export const Settings = () => {
     const { COLORS } = useTheme();
+    const navigation = useNavigation();
+
+    const handleGoPerfilUser = () => {
+        navigation.navigate('Profile');
+    }
 
     return (
         <>
@@ -23,31 +29,36 @@ export const Settings = () => {
                 <Profile
                     iconLeft
                     typeUser
-                    name='Perfil'
+                    name='Perfil do Usuário'
+                    onPress={handleGoPerfilUser}
                 />
 
                 <Profile
                     iconLeft
                     typeNotification
-                    name='Notificação'
+                    name='Notificações'
+                    onPress={() => { }}
                 />
 
                 <Profile
                     iconLeft
                     typeWalet
                     name='Minha Carteira'
+                    onPress={() => { }}
                 />
 
                 <Profile
                     iconLeft
                     typeLogin
                     name='Configuração Login'
+                    onPress={() => { }}
                 />
 
                 <Profile
                     iconLeft
                     typeCall
                     name='Central Serviços'
+                    onPress={() => { }}
                 />
 
                 <ViewFooter>
