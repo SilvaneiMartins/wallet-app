@@ -72,7 +72,7 @@ export const Profile = () => {
                                 />
                             </ViewIconButton>
                         </TouchableOpacity>
-                        <TitleFooter>Sair da Wallet</TitleFooter>
+                        <TitleFooter>Deletar Conta</TitleFooter>
                     </ViewFooter>
                 </Footer>
             </Container>

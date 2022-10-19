@@ -41,6 +41,7 @@ export default {
         PURPLE_CARD: "#5B259F",
         PURPLE_ELIPSE_ONE: "#6E34B8",
         PURPLE_ELIPSE_TWO: "#9038FF",
+        PURPLE_TEXT: '#130138',
 
         TONE: '#E6E3D6',
         AVATAR: '#E0E0E0',

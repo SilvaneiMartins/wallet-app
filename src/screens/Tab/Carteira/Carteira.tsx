@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 
 import { transaction } from "../../../utils/transaction";
@@ -40,6 +41,8 @@ import {
 } from './styles';
 
 export const Carteira = () => {
+    const navigation = useNavigation();
+
     return (
         <Container>
             <Header
@@ -69,15 +72,18 @@ export const Carteira = () => {
                     </TouchableOpacity>
                     <TouchableOpacity style={{ alignItems: 'center' }}>
                         <IconPayment source={Payments} />
-                        <TitlePayments>Pagtos</TitlePayments>
+                        <TitlePayments>Forma Pagto</TitlePayments>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ alignItems: 'center' }}>
                         <IconPayOut source={PayOut} />
-                        <TitlePayOut>Pagto</TitlePayOut>
+                        <TitlePayOut>Pagtos</TitlePayOut>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ alignItems: 'center' }}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('AddCartao')}
+                        style={{ alignItems: 'center' }}
+                    >
                         <IconTopUp source={TopUp} />
-                        <TitleTopUp>Mais Opção</TitleTopUp>
+                        <TitleTopUp>Add Cartão</TitleTopUp>
                     </TouchableOpacity>
                 </Body>
             </ViewContainer>
