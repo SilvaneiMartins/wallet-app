@@ -7,7 +7,11 @@ import { Container } from './styles';
 export const Relatorio = () => {
     return (
         <>
-            <Header appName='Relatório' />
+            <Header
+                iconLeft
+                typeRelatorio
+                appName='Relatório'
+            />
             <Container>
                 <Text>Relatorio</Text>
             </Container>

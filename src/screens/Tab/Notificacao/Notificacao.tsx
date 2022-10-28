@@ -7,7 +7,11 @@ import { Container } from './styles';
 export const Notificacao = () => {
     return (
         <>
-            <Header appName='Notificação' />
+            <Header
+                iconLeft
+                typeNotification
+                appName='Notificação'
+            />
             <Container>
 
             </Container>
