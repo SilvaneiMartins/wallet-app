@@ -1,8 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import BalancePng from '../../../assets/estatistica.png'
 import { Header } from '../../../components/Header';
-import { Container } from './styles';
+import {
+    Container,
+    AmountValue,
+    BalanceImage,
+} from './styles';
 
 export const Relatorio = () => {
     return (
@@ -13,7 +18,12 @@ export const Relatorio = () => {
                 appName='Relatório'
             />
             <Container>
-                <Text>Relatorio</Text>
+                <BalanceImage
+                    source={BalancePng}
+                    resizeMode="contain"
+                >
+                    <AmountValue>R$ 500,00</AmountValue>
+                </BalanceImage>
             </Container>
         </>
     )
