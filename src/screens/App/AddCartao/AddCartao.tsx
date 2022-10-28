@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import VisaPng from '../../../assets/visa.png';
 import BgPng from '../../../assets/addcard.png';
@@ -15,9 +16,10 @@ import {
 } from './styles';
 
 export const AddCartao = () => {
+    const navigation = useNavigation();
 
     const handleAddCartao = () => {
-        console.warn('Detalhes do Cartão');
+        navigation.navigate('DetailsCard');
     }
 
     return (
