@@ -32,10 +32,22 @@ export const Header = ({
             {iconLeft && (
                 <>
                     {typeRelatorio && (
-                        <ChartBarHorizontal size={32} weight="light" />
+                        <ChartBarHorizontal
+                            size={32}
+                            weight="light"
+                            style={{
+                                marginLeft: 10,
+                            }}
+                        />
                     )}
                     {typeNotification && (
-                        <BellSimpleRinging size={32} weight="light" />
+                        <BellSimpleRinging
+                            size={32}
+                            weight="light"
+                            style={{
+                                marginLeft: 10,
+                            }}
+                        />
                     )}
                 </>
             )}
