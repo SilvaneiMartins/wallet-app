@@ -1,5 +1,5 @@
 import React from 'react';
-import { BellSimpleRinging, ChartBarHorizontal } from 'phosphor-react-native';
+import { BellSimpleRinging, ChartBarHorizontal, CurrencyCircleDollar } from 'phosphor-react-native';
 
 import {
     Container,
@@ -16,6 +16,7 @@ interface IHeader {
     textLeft?: boolean;
     avatarRight?: boolean;
     typeRelatorio?: boolean;
+    typeTransaction?: boolean;
     typeNotification?: boolean;
 }
 
@@ -25,6 +26,7 @@ export const Header = ({
     appName,
     textLeft,
     avatarRight,
+    typeTransaction,
     typeNotification,
 }: IHeader) => {
     return (
@@ -42,6 +44,15 @@ export const Header = ({
                     )}
                     {typeNotification && (
                         <BellSimpleRinging
+                            size={32}
+                            weight="light"
+                            style={{
+                                marginLeft: 10,
+                            }}
+                        />
+                    )}
+                    {typeTransaction && (
+                        <CurrencyCircleDollar
                             size={32}
                             weight="light"
                             style={{

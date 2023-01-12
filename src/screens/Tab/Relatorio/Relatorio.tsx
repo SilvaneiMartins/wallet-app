@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Header } from '../../../components/Header';
 import BalancePng from '../../../assets/estatistica.png'
-import { transaction } from '../../../utils/transaction';
+import { limited_transaction } from '../../../utils/limited_transaction';
 import {
     Container,
     AmountValue,
@@ -26,6 +27,12 @@ import {
 } from './styles';
 
 export const Relatorio = () => {
+    const navigation = useNavigation();
+
+    const handleGoTransaction = () => {
+        navigation.navigate('Transaction')
+    }
+
     return (
         <>
             <Header
@@ -48,7 +55,7 @@ export const Relatorio = () => {
 
                 <Footer>
                     <FlatList
-                        data={transaction}
+                        data={limited_transaction}
                         renderItem={({ item }) => (
                             <ContentFlat>
                                 <IconTransaction
@@ -66,7 +73,7 @@ export const Relatorio = () => {
                         ListHeaderComponent={
                             <ContentFlatHeader>
                                 <Title>Minhas Transações</Title>
-                                <ButtonVerTotos>
+                                <ButtonVerTotos onPress={handleGoTransaction}>
                                     <ButtonTitleVertotos>Mais Recentes</ButtonTitleVertotos>
                                 </ButtonVerTotos>
                             </ContentFlatHeader>
