@@ -13,7 +13,7 @@ export const BalanceImage = styled.ImageBackground`
 export const AmountValue = styled.Text`
     font-size: 11px;
     top: 60px;
-    left: 150px;
+    left: 160px;
     position: absolute;
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: ${({ theme }) => theme.FONTS.POPPINSREGULAR};
@@ -21,7 +21,6 @@ export const AmountValue = styled.Text`
 
 export const ViewContent = styled.View`
     padding: 30px;
-    margin-top: 30px;
     align-items: center;
     justify-content: center;
 `;
@@ -46,7 +45,8 @@ export const Footer = styled.View`
 `;
 
 export const ContentFlat = styled.View`
-    padding: 5px 20px;
+    padding: 5px;
+    margin-right: 10px;
     flex-direction: row;
 `;
 

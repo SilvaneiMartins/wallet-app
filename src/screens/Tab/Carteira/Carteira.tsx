@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 
-import { transaction } from "../../../utils/transaction";
+import { limited_transaction } from "../../../utils/limited_transaction";
 import Payments from '../../../assets/export.png';
 import Transfer from '../../../assets/convert.png';
 import TopUp from '../../../assets/add-circle.png';
@@ -42,6 +42,10 @@ import {
 
 export const Carteira = () => {
     const navigation = useNavigation();
+
+    const hadleGoTransaction = () => {
+        navigation.navigate('Transaction')
+    }
 
     return (
         <Container>
@@ -90,7 +94,7 @@ export const Carteira = () => {
 
             <Footer>
                 <FlatList
-                    data={transaction}
+                    data={limited_transaction}
                     renderItem={({ item }) => (
                         <ContentFlat>
                             <IconTransaction
@@ -108,7 +112,7 @@ export const Carteira = () => {
                     ListHeaderComponent={
                         <ContentFlatHeader>
                             <Title>Minhas Transações</Title>
-                            <ButtonVerTotos>
+                            <ButtonVerTotos onPress={hadleGoTransaction}>
                                 <ButtonTitleVertotos>Ver Todos</ButtonTitleVertotos>
                             </ButtonVerTotos>
                         </ContentFlatHeader>
