@@ -71,6 +71,7 @@ export const Notificacao = () => {
 
                 <ContentBody>
                     <ContentBodyTitle>Recentes</ContentBodyTitle>
+
                 </ContentBody>
             </Container>
         </>
