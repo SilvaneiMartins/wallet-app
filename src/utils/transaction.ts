@@ -170,5 +170,12 @@ export const transaction = [
         subtitle: "Valor referente a entrada",
         amount: 300.00,
         icon: EntradaPng
+    },
+    {
+        id: "25",
+        title: "Saída",
+        subtitle: "Valor referente a Saída",
+        amount: 300.00,
+        icon: EntradaPng
     }
 ]
