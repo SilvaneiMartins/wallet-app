@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { ArrowCircleUp } from 'phosphor-react-native';
 
 import { Header } from '../../../components/Header';
 import { new_notifications } from '../../../utils/new_notifications';
+import { ContentTop } from '../../../components/Notifications/ContentTop';
+import { recents_notifications } from '../../../utils/recent_notifications';
 
 import {
     Container,
-    ContentTop,
-    ContentTopTitle,
     ContentBody,
-    ContentBodyTitle,
     ContentFlat,
+    ContentHeader,
+    ContentTopTitle,
+    ContentBodyTitle,
     DataNotifications,
-    DataNotificationsText,
-    NewNotificationsFlat,
     TitleNotifications,
+    NewNotificationsFlat,
+    DataNotificationsText,
     TitleNotificationsText,
+    NewButtonNotifications,
     DescriptionNotifications,
     DescriptionNotificationsText,
-    NewButtonNotifications,
- } from './styles';
+} from './styles';
 
 export const Notificacao = () => {
     const { COLORS } = useTheme();
@@ -34,12 +36,28 @@ export const Notificacao = () => {
                 appName='Notificação'
             />
             <Container>
-                <ContentTop>
+                <ContentHeader>
                     <ContentTopTitle>Novo</ContentTopTitle>
                     <FlatList
                         data={new_notifications}
                         renderItem={({ item }) => (
-                           <ContentFlat>
+                            <ContentTop
+                                datetime={item.datetime}
+                                title={item.title}
+                                type={item.type}
+                            />
+                        )}
+                        showsVerticalScrollIndicator={false}
+                    />
+                </ContentHeader>
+
+                <ContentBody>
+                    <ContentBodyTitle>Recentes</ContentBodyTitle>
+                    <FlatList
+                        data={recents_notifications}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => (
+                            <ContentFlat>
                                 <NewNotificationsFlat>
                                     <DataNotifications>
                                         <DataNotificationsText>
@@ -63,15 +81,13 @@ export const Notificacao = () => {
                                 <NewButtonNotifications>
                                     <ArrowCircleUp size={32} color={COLORS.GREEN2} />
                                 </NewButtonNotifications>
-                           </ContentFlat>
+                            </ContentFlat>
                         )}
+                        contentContainerStyle={{
+                            paddingBottom: 20
+                        }}
                         showsVerticalScrollIndicator={false}
                     />
-                </ContentTop>
-
-                <ContentBody>
-                    <ContentBodyTitle>Recentes</ContentBodyTitle>
-
                 </ContentBody>
             </Container>
         </>
