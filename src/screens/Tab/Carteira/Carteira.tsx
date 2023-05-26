@@ -2,12 +2,14 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 
-import { limited_transaction } from "../../../utils/limited_transaction";
 import Payments from '../../../assets/export.png';
 import Transfer from '../../../assets/convert.png';
 import TopUp from '../../../assets/add-circle.png';
 import PayOut from '../../../assets/money-send.png';
+import EllipseOnePng from '../../../assets/ellipse1.png';
+import EllipseTwoPng from '../../../assets/ellipse2.png';
 import { Header } from '../../../components/Header/Header';
+import { limited_transaction } from "../../../utils/limited_transaction";
 import {
     Container,
     Content,
@@ -38,6 +40,8 @@ import {
     NameTransaction,
     SubtTitleTransaction,
     AmountTransaction,
+    EllipseOne,
+    EllipseTwo,
 } from './styles';
 
 export const Carteira = () => {
@@ -57,16 +61,17 @@ export const Carteira = () => {
 
             <ViewContainer>
                 <Content>
+                    <EllipseOne source={EllipseOnePng} />
                     <ViewBalanceLeft>
                         <TitleValor>Valor Total</TitleValor>
                         <TitleValoConta>R$ 1.000,00</TitleValoConta>
                     </ViewBalanceLeft>
 
-
                     <ViewBalanceRight>
                         <TitleCartao>Cartão</TitleCartao>
                         <TitleNomeCartao>Wallet</TitleNomeCartao>
                     </ViewBalanceRight>
+                    <EllipseTwo source={EllipseTwoPng} />
                 </Content>
 
                 <Body>

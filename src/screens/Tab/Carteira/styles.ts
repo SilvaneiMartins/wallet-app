@@ -20,12 +20,22 @@ export const Content = styled.View`
     background-color: ${({ theme }) => theme.COLORS.PURPLE_CARD};
 `;
 
-export const ViewBalanceLeft = styled.View`
-
+export const EllipseOne = styled.Image`
+    top: 1px;
+    left: 40px;
+    position: absolute;
 `;
 
-export const ViewBalanceRight = styled.View`
+export const EllipseTwo = styled.Image`
+    right: 0;
+    bottom: 0;
+    position: absolute;
+`;
 
+export const ViewBalanceLeft = styled.View``;
+
+export const ViewBalanceRight = styled.View`
+    z-index: 1;
 `;
 
 export const TitleValor = styled.Text`
